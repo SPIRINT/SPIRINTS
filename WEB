@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Panel</title>
+    <style>
+        body {
+            background-color: #0f0f0f;
+            color: #00ff00;
+            font-family: monospace;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .info {
+            border: 2px solid #00ff00;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            background-color: #000;
+        }
+        .title {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .data {
+            color: #00ff00;
+            font-size: 20px;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .url-input {
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 60%;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            background-color: #00ff00;
+            color: #000;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #00dd00;
+        }
+        .terms {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function showInformation() {
+            var termsCheckbox = document.getElementById("terms-checkbox");
+            if (termsCheckbox.checked) {
+                var url = document.getElementById("url-input").value;
+                if (url === "https://www.facebook.com/profile.php?id=61558001451031&mibextid=ZbWKwL") {
+                    document.getElementById("info-panel").style.display = "block";
+                    document.getElementById("email").innerText = "Email: anonimoq12q@gmail.com";
+                    document.getElementById("password").innerText = "Password: QWERTY123+";
+                    document.getElementById("address").innerText = "Address: Allende Street 216, Nezahualcoyotl City, Mexico, Mexico";
+                    document.getElementById("ip").innerText = "IP: 192.168.1.286";
+                    document.getElementById("device").innerText = "Device: Lenovo A8 Laptop";
+                    document.getElementById("battery").innerText = "Battery Percentage: 69%";
+                    document.getElementById("user").innerText = "User: Jacinto Canek";
+                } else {
+                    alert("Invalid URL.");
+                }
+            } else {
+                alert("Please accept the terms and conditions.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="terms">
+        <input type="checkbox" id="terms-checkbox">
+        <label for="terms-checkbox">I accept the terms and conditions</label>
+    </div>
+    <div class="info-message">
+        <p>Sprint Software is not responsible for the misuse of the provided information. The provided information is within the public domain, thus its public distribution is completely legal.</p>
+    </div>
+    <div class="url-input">
+        <input type="text" id="url-input" placeholder="Enter URL">
+        <input type="submit" value="Show Information" onclick="showInformation()">
+    </div>
+    <div class="info" id="info-panel" style="display:none;">
+        <div class="title">System successfully hacked!</div>
+        <div class="data" id="email"></div>
+        <div class="data" id="password"></div>
+        <div class="data" id="address"></div>
+        <div class="data" id="ip"></div>
+        <div class="data" id="device"></div>
+        <div class="data" id="battery"></div>
+        <div class="data" id="user"></div>
+    </div>
+</body>
+</html>
